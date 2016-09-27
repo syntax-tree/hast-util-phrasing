@@ -1,0 +1,31 @@
+/**
+ * @author Titus Wormer
+ * @copyright 2016 Titus Wormer
+ * @license MIT
+ * @module hast-util-phrasing
+ * @fileoverview Test suite for `hast-util-phrasing`.
+ */
+
+'use strict';
+
+/* Dependencies. */
+var test = require('tape');
+var u = require('unist-builder');
+var h = require('hastscript');
+var phrasing = require('./');
+
+/* API. */
+test('phrasing()', function (t) {
+  t.notOk(phrasing(h('div', 'Alpha')), 'flow');
+  t.ok(phrasing(h('meta', {itemProp: 'bravo'})), 'meta w/ itemProp');
+  t.notOk(phrasing(h('meta', {charSet: 'utf8'})), 'meta w/o itemProp');
+  t.ok(phrasing(u('text', 'charlie')), 'text');
+  t.ok(phrasing(u('text', '\n\t')), 'inter-element white-space');
+  t.ok(phrasing(h('a', {href: '/'}, 'Delta')), 'listed elements (a)');
+  t.ok(phrasing(h('b', {id: 'echo'}, 'Foxtrott')), 'listed elements (b)');
+  t.ok(phrasing(h('wbr')), 'listed elements (wbr)');
+  t.ok(phrasing(h('svg')), 'embedded content');
+  t.ok(phrasing(h('link', {rel: ['stylesheet'], href: 'index.css'})), 'body-ok links');
+
+  t.end();
+});

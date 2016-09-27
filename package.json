@@ -1,0 +1,69 @@
+{
+  "name": "hast-util-phrasing",
+  "version": "0.0.0",
+  "description": "Check if a node is a phrasing content",
+  "license": "MIT",
+  "keywords": [
+    "hast",
+    "html",
+    "category",
+    "phrasing",
+    "util",
+    "utility"
+  ],
+  "repository": "https://github.com/wooorm/hast-util-phrasing",
+  "bugs": "https://github.com/wooorm/hast-util-phrasing/issues",
+  "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)"
+  ],
+  "engines": {
+    "node": ">=0.11.0"
+  },
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "hast-util-embedded": "^1.0.0",
+    "hast-util-has-property": "^1.0.0",
+    "hast-util-is-body-ok-link": "^1.0.0",
+    "hast-util-is-element": "^1.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "esmangle": "^1.0.0",
+    "hastscript": "^3.0.1",
+    "nyc": "^8.3.0",
+    "remark-cli": "^2.0.0",
+    "remark-preset-wooorm": "^1.0.0",
+    "tape": "^4.4.0",
+    "unist-builder": "^1.0.2",
+    "xo": "^0.16.0"
+  },
+  "scripts": {
+    "build-md": "remark . --quiet --frail",
+    "build-bundle": "browserify index.js -s hastUtilPhrasing > hast-util-phrasing.js",
+    "build-mangle": "esmangle hast-util-phrasing.js > hast-util-phrasing.min.js",
+    "build": "npm run build-md && npm run build-bundle && npm run build-mangle",
+    "lint": "xo",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test/index.js",
+    "test": "npm run build && npm run lint && npm run test-coverage"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "xo": {
+    "space": true,
+    "ignores": [
+      "hast-util-phrasing.js"
+    ]
+  },
+  "remarkConfig": {
+    "output": true,
+    "presets": "wooorm"
+  }
+}
