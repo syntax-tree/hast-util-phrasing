@@ -1,11 +1,3 @@
-/**
- * @author Titus Wormer
- * @copyright 2016 Titus Wormer
- * @license MIT
- * @module hast-util-phrasing
- * @fileoverview Check if a node is a phrasing content.
- */
-
 /* Dependencies. */
 var is = require('hast-util-is-element');
 var has = require('hast-util-has-property');
