@@ -4,7 +4,7 @@ Check if a [node][] is a [**phrasing**][spec] content.
 
 ## Installation
 
-[npm][npm-install]:
+[npm][]:
 
 ```bash
 npm install hast-util-phrasing
@@ -53,9 +53,13 @@ phrasing({type: 'text', value: 'Delta'});
 
 Check if the given value is a [**phrasing**][spec] content.
 
-**Parameters**: `node` (`*`) — Value to check.
+###### Parameters
 
-**Returns**: `boolean`, whether `node` passes the test.
+`node` (`*`) — Value to check.
+
+###### Returns
+
+`boolean` — Whether `node` passes the test.
 
 ## License
 
@@ -71,12 +75,12 @@ Check if the given value is a [**phrasing**][spec] content.
 
 [codecov]: https://codecov.io/github/wooorm/hast-util-phrasing
 
-[npm-install]: https://docs.npmjs.com/cli/install
+[npm]: https://docs.npmjs.com/cli/install
 
 [license]: LICENSE
 
 [author]: http://wooorm.com
 
-[node]: https://github.com/wooorm/hast#node
+[node]: https://github.com/wooorm/hast
 
 [spec]: https://html.spec.whatwg.org/#phrasing-content-2
