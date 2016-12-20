@@ -67,13 +67,13 @@ Check if the given value is a [**phrasing**][spec] content.
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/wooorm/hast-util-phrasing.svg
+[travis-badge]: https://img.shields.io/travis/syntax-tree/hast-util-phrasing.svg
 
-[travis]: https://travis-ci.org/wooorm/hast-util-phrasing
+[travis]: https://travis-ci.org/syntax-tree/hast-util-phrasing
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/wooorm/hast-util-phrasing.svg
+[codecov-badge]: https://img.shields.io/codecov/c/github/syntax-tree/hast-util-phrasing.svg
 
-[codecov]: https://codecov.io/github/wooorm/hast-util-phrasing
+[codecov]: https://codecov.io/github/syntax-tree/hast-util-phrasing
 
 [npm]: https://docs.npmjs.com/cli/install
 
@@ -81,6 +81,6 @@ Check if the given value is a [**phrasing**][spec] content.
 
 [author]: http://wooorm.com
 
-[node]: https://github.com/wooorm/hast
+[node]: https://github.com/syntax-tree/hast
 
 [spec]: https://html.spec.whatwg.org/#phrasing-content-2
