@@ -49,7 +49,7 @@ phrasing({type: 'text', value: 'Delta'});
 
 ## API
 
-### `transparent(node)`
+### `phrasing(node)`
 
 Check if the given value is a [**phrasing**][spec] content.
 
