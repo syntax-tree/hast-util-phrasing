@@ -1,7 +1,7 @@
 language: node_js
 node_js:
 - '4.0'
-- '7.0'
+- '9.0'
 after_script: bash <(curl -s https://codecov.io/bash)
 deploy:
   - provider: npm
@@ -10,7 +10,7 @@ deploy:
       secure: MsUuHXgK/9N98FF/CUi5nIdV0ytWb2a9Uap9Vgx75icGUkvC0vTwhc7ig1d6dsSloQqSP6haAepAmz1YtL4xSes7Yte/BM9GQMEnRLLdQyicQj/WgH1uVx5WHNE98NuGxwcYzuhhbGI/40Qbos2m5jhWSRgzGsUYvWVIrWRUpzv3CFlk7TSP3rHF+fyj8U189r1oMESslooq4CeteSXiihxaoFV5UH2EktwID5Dz+QpKhQshKvoLgtl+6qMFwembL/hgbdbj6aIkxavV0it/zzzyuHNH3DnMI3D8cqcVPY2XitxlR8m8YDi2nfuolcWvM5fLMWkwBDI/0uDjzgdjNj8AVeMAIAExzc9SR0KqcDPychb4kyCcUuRVO2QHX4fomf71udhE0CSa7BDWQi8XePclUMb2v69iIoN7QSDjksdc0+8BfMwshYn1k5CkxvJaioWDzVjrVag/fjBbNXfeUmZcPhO7p5RpKiry/8YyA4251UCxNLk0hi8UwFS9NrDy6uM+wlY+B68a6m7ONzigTsVcalBoPkdRBgBBMBrMdnfwuwkoYKJrNCx09A5NXT7d0g4UUOvWKLwRLehjnZTeDQGPDI0fYNXkRu8ouO9jVJSXsBcKUss0WH8c5u2OYj+xT7dczRGO538pD30qQBYcwIMvyAmuAC0CZQkz4NslXms=
     on:
       tags: true
-      node: '4.0'
+      node: '9.0'
   - provider: releases
     api_key:
       secure: iapBIHL+6QAOV3ow4FijnSIgbA5WUfXoEJo99BB18VA6iVqYXLg/ByImlbcgLB9hytQcHmwZF+jSh+R02O8OdzHEHrxKZM23+I3bbNaQ+56/VBbTNSqJDs0BCnzcosfoBUY7FCrcSORbI9o8atmFOlAe7CP1nNQ9RoUbo/ng2VyJh/eQ/vf5vGcRVkCBGDjLisp3Xb6Wd/OPAedL3+nT/G2P8AWLCmGbLagUHHIqYR9QhTK8ffx63+dldDndetDwVZl+/5GWl4cweukFl5BLBcth7qxNVkMJ6kqU2N0Px8lSJ771/p4P01Yht5K3Xe1kSoUGf25BrJjYWZl9VlarhqSC4SQA38DivqMj1ytEjAnTXMuaFVvTvuVrjMei1PiuA5rK9VDkyVb/KpsPGr3EvB+4NPm28EavXnLQHRZNNHXF0n2/jL74qqAGUJ2m8B7Wy7ez0yO3Beow5MgMVIfHaLEXNqBZlzRHe5X6+kos4yiYvbrKLkNqNPPquq14aHNW8aNeTBrrssC364o2zzKbQTjtfY0hKs1wUWA7XgxjoOsxCFfH4wpAc2Up5bMV3BvWAGD+3bb+6hqpxsWL47hca5YKgHgeIaan6c+upGvJkUyiHetcIbpEqXuQKXljS0XJ4czeFXgp4xsBcZmOQ5OOPLPV1NaahwBC3MAbsF55smY=
@@ -19,4 +19,4 @@ deploy:
       - "hast-util-phrasing.min.js"
     on:
       tags: true
-      node: '7.0'
+      node: '9.0'
