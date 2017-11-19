@@ -61,6 +61,14 @@ Check if the given value is a [**phrasing**][spec] content.
 
 `boolean` — Whether `node` passes the test.
 
+## Contribute
+
+See [`contribute.md` in `syntax-tree/hast`][contribute] for ways to get
+started.
+
+This organisation has a [Code of Conduct][coc].  By interacting with this
+repository, organisation, or community you agree to abide by its terms.
+
 ## License
 
 [MIT][license] © [Titus Wormer][author]
@@ -84,3 +92,7 @@ Check if the given value is a [**phrasing**][spec] content.
 [node]: https://github.com/syntax-tree/hast
 
 [spec]: https://html.spec.whatwg.org/#phrasing-content-2
+
+[contribute]: https://github.com/syntax-tree/hast/blob/master/contributing.md
+
+[coc]: https://github.com/syntax-tree/hast/blob/master/code-of-conduct.md
