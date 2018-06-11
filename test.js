@@ -1,12 +1,10 @@
 'use strict';
 
-/* Dependencies. */
 var test = require('tape');
 var u = require('unist-builder');
 var h = require('hastscript');
-var phrasing = require('./');
+var phrasing = require('.');
 
-/* API. */
 test('phrasing()', function (t) {
   t.notOk(phrasing(h('div', 'Alpha')), 'flow');
   t.ok(phrasing(h('meta', {itemProp: 'bravo'})), 'meta w/ itemProp');
