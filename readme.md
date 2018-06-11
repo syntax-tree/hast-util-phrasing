@@ -13,16 +13,15 @@ npm install hast-util-phrasing
 ## Usage
 
 ```javascript
-// Dependencies:
-var phrasing = require('hast-util-phrasing');
+var phrasing = require('.')
 
 // Given flow content:
 phrasing({
   type: 'element',
   tagName: 'div',
   children: [{type: 'text', value: 'Alpha'}]
-});
-//=> false
+})
+// => false
 
 // Given a phrasing element:
 phrasing({
@@ -30,8 +29,8 @@ phrasing({
   tagName: 'meta',
   properties: {itemProp: 'bravo'},
   children: []
-});
-//=> true
+})
+// => true
 
 // Given a non-phrasing element:
 phrasing({
@@ -39,12 +38,12 @@ phrasing({
   tagName: 'meta',
   properties: {charSet: 'utf8'},
   children: []
-});
-//=> false
+})
+// => false
 
 // Given text:
-phrasing({type: 'text', value: 'Delta'});
-//=> true
+phrasing({type: 'text', value: 'Delta'})
+// => true
 ```
 
 ## API
@@ -55,7 +54,7 @@ Check if the given value is a [**phrasing**][spec] content.
 
 ###### Parameters
 
-`node` (`*`) — Value to check.
+*   `node` (`*`) — Value to check.
 
 ###### Returns
 

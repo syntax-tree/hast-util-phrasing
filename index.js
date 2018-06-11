@@ -1,13 +1,10 @@
-/* Dependencies. */
-var is = require('hast-util-is-element');
-var has = require('hast-util-has-property');
-var embedded = require('hast-util-embedded');
-var bodyOKLink = require('hast-util-is-body-ok-link');
+var is = require('hast-util-is-element')
+var has = require('hast-util-has-property')
+var embedded = require('hast-util-embedded')
+var bodyOKLink = require('hast-util-is-body-ok-link')
 
-/* Expose. */
-module.exports = phrasing;
+module.exports = phrasing
 
-/* Constants. */
 var list = [
   'a',
   'abbr',
@@ -57,13 +54,14 @@ var list = [
   'u',
   'var',
   'wbr'
-];
+]
 
-/* Check if `node` is phrasing content. */
 function phrasing(node) {
-  return node.type === 'text' ||
+  return (
+    node.type === 'text' ||
     is(node, list) ||
     embedded(node) ||
     bodyOKLink(node) ||
-    (is(node, 'meta') && has(node, 'itemProp'));
+    (is(node, 'meta') && has(node, 'itemProp'))
+  )
 }
