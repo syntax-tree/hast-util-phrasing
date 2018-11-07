@@ -1,4 +1,4 @@
-# hast-util-phrasing [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
+# hast-util-phrasing [![Build][build-badge]][build] [![Coverage][coverage-badge]][coverage] [![Downloads][downloads-badge]][downloads] [![Chat][chat-badge]][chat]
 
 Check if a [node][] is a [**phrasing**][spec] content.
 
@@ -74,13 +74,21 @@ repository, organisation, or community you agree to abide by its terms.
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/syntax-tree/hast-util-phrasing.svg
+[build-badge]: https://img.shields.io/travis/syntax-tree/hast-util-phrasing.svg
 
-[travis]: https://travis-ci.org/syntax-tree/hast-util-phrasing
+[build]: https://travis-ci.org/syntax-tree/hast-util-phrasing
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/syntax-tree/hast-util-phrasing.svg
+[coverage-badge]: https://img.shields.io/codecov/c/github/syntax-tree/hast-util-phrasing.svg
 
-[codecov]: https://codecov.io/github/syntax-tree/hast-util-phrasing
+[coverage]: https://codecov.io/github/syntax-tree/hast-util-phrasing
+
+[downloads-badge]: https://img.shields.io/npm/dm/hast-util-phrasing.svg
+
+[downloads]: https://www.npmjs.com/package/hast-util-phrasing
+
+[chat-badge]: https://img.shields.io/badge/join%20the%20community-on%20spectrum-7b16ff.svg
+
+[chat]: https://spectrum.chat/unified/rehype
 
 [npm]: https://docs.npmjs.com/cli/install
 
