@@ -1,6 +1,6 @@
 {
   "name": "hast-util-phrasing",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Check if a node is a phrasing content",
   "license": "MIT",
   "keywords": [
