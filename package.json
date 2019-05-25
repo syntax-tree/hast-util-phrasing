@@ -39,7 +39,7 @@
     "xo": "^0.24.0"
   },
   "scripts": {
-    "format": "remark . -qfo && prettier --write '**/*.js' && xo --fix",
+    "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
     "build-bundle": "browserify index.js -s hastUtilPhrasing > hast-util-phrasing.js",
     "build-mangle": "browserify index.js -s hastUtilPhrasing -p tinyify > hast-util-phrasing.min.js",
     "build": "npm run build-bundle && npm run build-mangle",
