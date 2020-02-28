@@ -8,10 +8,9 @@ module.exports = phrasing
 var list = [
   'a',
   'abbr',
-  /* `area` is in fact only phrasing if it is inside a `map`
-   * element.  However, since `area`s are required to be
-   * inside a `map` element, and it’s a rather involved check,
-   * it’s ignored here for now. */
+  // `area` is in fact only phrasing if it is inside a `map` element.
+  // However, since `area`s are required to be inside a `map` element, and it’s
+  // a rather involved check, it’s ignored here for now.
   'area',
   'b',
   'bdi',
