@@ -1,3 +1,5 @@
 coverage/
 hast-util-phrasing.js
 hast-util-phrasing.min.js
+*.json
+*.md

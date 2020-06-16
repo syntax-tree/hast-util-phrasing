@@ -5,7 +5,7 @@ var u = require('unist-builder')
 var h = require('hastscript')
 var phrasing = require('.')
 
-test('phrasing()', function(t) {
+test('phrasing()', function (t) {
   t.notOk(phrasing(h('div', 'Alpha')), 'flow')
   t.ok(phrasing(h('meta', {itemProp: 'bravo'})), 'meta w/ itemProp')
   t.notOk(phrasing(h('meta', {charSet: 'utf8'})), 'meta w/o itemProp')
