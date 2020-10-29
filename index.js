@@ -1,7 +1,7 @@
 var is = require('hast-util-is-element')
 var has = require('hast-util-has-property')
 var embedded = require('hast-util-embedded')
-var bodyOKLink = require('hast-util-is-body-ok-link')
+var bodyOkLink = require('hast-util-is-body-ok-link')
 
 module.exports = phrasing
 
@@ -60,7 +60,7 @@ function phrasing(node) {
     node.type === 'text' ||
     is(node, list) ||
     embedded(node) ||
-    bodyOKLink(node) ||
+    bodyOkLink(node) ||
     (is(node, 'meta') && has(node, 'itemProp'))
   )
 }
