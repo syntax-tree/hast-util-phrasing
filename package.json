@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "browserify": "^17.0.0",
-    "hastscript": "^5.0.0",
+    "hastscript": "^6.0.0",
     "nyc": "^15.0.0",
     "prettier": "^2.0.0",
     "remark-cli": "^9.0.0",
@@ -42,12 +42,12 @@
     "tape": "^5.0.0",
     "tinyify": "^3.0.0",
     "unist-builder": "^2.0.0",
-    "xo": "^0.34.0"
+    "xo": "^0.35.0"
   },
   "scripts": {
     "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
-    "build-bundle": "browserify index.js -s hastUtilPhrasing > hast-util-phrasing.js",
-    "build-mangle": "browserify index.js -s hastUtilPhrasing -p tinyify > hast-util-phrasing.min.js",
+    "build-bundle": "browserify index.js -s hastUtilPhrasing -o hast-util-phrasing.js",
+    "build-mangle": "browserify index.js -s hastUtilPhrasing -o hast-util-phrasing.min.js -p tinyify",
     "build": "npm run build-bundle && npm run build-mangle",
     "test-api": "node test",
     "test-coverage": "nyc --reporter lcov tape test.js",
