@@ -1,9 +1,7 @@
-'use strict'
-
-var test = require('tape')
-var u = require('unist-builder')
-var h = require('hastscript')
-var phrasing = require('.')
+import test from 'tape'
+import {u} from 'unist-builder'
+import h from 'hastscript'
+import {phrasing} from './index.js'
 
 test('phrasing()', function (t) {
   t.notOk(phrasing(h('div', 'Alpha')), 'flow')
