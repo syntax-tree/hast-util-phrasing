@@ -1,9 +1,9 @@
-import {isElement} from 'hast-util-is-element'
+import {convertElement} from 'hast-util-is-element'
 import {hasProperty} from 'hast-util-has-property'
 import {embedded} from 'hast-util-embedded'
 import bodyOkLink from 'hast-util-is-body-ok-link'
 
-var list = [
+var basic = convertElement([
   'a',
   'abbr',
   // `area` is in fact only phrasing if it is inside a `map` element.
@@ -51,14 +51,21 @@ var list = [
   'u',
   'var',
   'wbr'
-]
+])
 
+var meta = convertElement('meta')
+
+/**
+ * @param {unknown} node
+ * @returns {boolean}
+ */
 export function phrasing(node) {
   return (
-    node.type === 'text' ||
-    isElement(node, list) ||
+    // @ts-ignore Looks like a text.
+    (node && node.type === 'text') ||
+    basic(node) ||
     embedded(node) ||
     bodyOkLink(node) ||
-    (isElement(node, 'meta') && hasProperty(node, 'itemProp'))
+    (meta(node) && hasProperty(node, 'itemProp'))
   )
 }
