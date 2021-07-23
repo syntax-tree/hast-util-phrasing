@@ -3,7 +3,7 @@ import {hasProperty} from 'hast-util-has-property'
 import {embedded} from 'hast-util-embedded'
 import bodyOkLink from 'hast-util-is-body-ok-link'
 
-var basic = convertElement([
+const basic = convertElement([
   'a',
   'abbr',
   // `area` is in fact only phrasing if it is inside a `map` element.
@@ -53,7 +53,7 @@ var basic = convertElement([
   'wbr'
 ])
 
-var meta = convertElement('meta')
+const meta = convertElement('meta')
 
 /**
  * @param {unknown} node

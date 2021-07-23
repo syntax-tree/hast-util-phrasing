@@ -3,7 +3,7 @@ import {u} from 'unist-builder'
 import h from 'hastscript'
 import {phrasing} from './index.js'
 
-test('phrasing()', function (t) {
+test('phrasing()', (t) => {
   t.notOk(phrasing(h('div', 'Alpha')), 'flow')
   t.ok(phrasing(h('meta', {itemProp: 'bravo'})), 'meta w/ itemProp')
   t.notOk(phrasing(h('meta', {charSet: 'utf8'})), 'meta w/o itemProp')
