@@ -1,6 +1,6 @@
 import test from 'tape'
 import {u} from 'unist-builder'
-import h from 'hastscript'
+import {h} from 'hastscript'
 import {phrasing} from './index.js'
 
 test('phrasing()', (t) => {
