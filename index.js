@@ -1,8 +1,7 @@
 import {convertElement} from 'hast-util-is-element'
 import {hasProperty} from 'hast-util-has-property'
 import {embedded} from 'hast-util-embedded'
-// @ts-expect-error: to do types.
-import bodyOkLink from 'hast-util-is-body-ok-link'
+import {isBodyOkLink} from 'hast-util-is-body-ok-link'
 
 const basic = convertElement([
   'a',
@@ -61,12 +60,13 @@ const meta = convertElement('meta')
  * @returns {boolean}
  */
 export function phrasing(node) {
-  return (
-    // @ts-expect-error Looks like a text.
+  return Boolean(
+    // @ts-expect-error Looks like a node.
     (node && node.type === 'text') ||
-    basic(node) ||
-    embedded(node) ||
-    bodyOkLink(node) ||
-    (meta(node) && hasProperty(node, 'itemProp'))
+      basic(node) ||
+      embedded(node) ||
+      // @ts-expect-error Looks like a node.
+      isBodyOkLink(node) ||
+      (meta(node) && hasProperty(node, 'itemProp'))
   )
 }
