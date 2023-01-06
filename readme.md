@@ -17,7 +17,7 @@
 *   [Install](#install)
 *   [Use](#use)
 *   [API](#api)
-    *   [`phrasing(node)`](#phrasingnode)
+    *   [`phrasing(value)`](#phrasingvalue)
 *   [Types](#types)
 *   [Compatibility](#compatibility)
 *   [Security](#security)
@@ -38,7 +38,7 @@ looking for!
 ## Install
 
 This package is [ESM only][esm].
-In Node.js (version 12.20+, 14.14+, 16.0+, or 18.0+), install with [npm][]:
+In Node.js (version 14.14+ and 16.0+), install with [npm][]:
 
 ```sh
 npm install hast-util-phrasing
@@ -96,20 +96,21 @@ phrasing({type: 'text', value: 'Delta'})
 
 ## API
 
-This package exports the identifier `phrasing`.
+This package exports the identifier [`phrasing`][phrasing].
 There is no default export.
 
-### `phrasing(node)`
+### `phrasing(value)`
 
 Check if the given value is [*phrasing*][spec] content.
 
 ###### Parameters
 
-*   `node` (`*`) — Value to check, typically [`Node`][node].
+*   `value` (`unknown`)
+    — Thing to check, typically [`Node`][node].
 
 ###### Returns
 
-Whether `node` passes the test (`boolean`).
+Whether `value` is phrasing content (`boolean`).
 
 ## Types
 
@@ -120,7 +121,7 @@ It exports no additional types.
 
 Projects maintained by the unified collective are compatible with all maintained
 versions of Node.js.
-As of now, that is Node.js 12.20+, 14.14+, 16.0+, and 18.0+.
+As of now, that is Node.js 14.14+ and 16.0+.
 Our projects sometimes work with older versions, but this is not guaranteed.
 
 ## Security
@@ -223,10 +224,12 @@ abide by its terms.
 
 [coc]: https://github.com/syntax-tree/.github/blob/main/code-of-conduct.md
 
-[spec]: https://html.spec.whatwg.org/#phrasing-content-2
+[spec]: https://html.spec.whatwg.org/multipage/dom.html#phrasing-content-2
 
 [hast]: https://github.com/syntax-tree/hast
 
 [node]: https://github.com/syntax-tree/hast#nodes
 
 [xss]: https://en.wikipedia.org/wiki/Cross-site_scripting
+
+[phrasing]: #phrasingvalue
