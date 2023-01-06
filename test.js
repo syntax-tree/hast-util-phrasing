@@ -3,8 +3,15 @@ import test from 'node:test'
 import {u} from 'unist-builder'
 import {h} from 'hastscript'
 import {phrasing} from './index.js'
+import * as mod from './index.js'
 
 test('phrasing()', () => {
+  assert.deepEqual(
+    Object.keys(mod).sort(),
+    ['phrasing'],
+    'should expose the public api'
+  )
+
   assert.ok(!phrasing(h('div', 'Alpha')), 'flow')
   assert.ok(phrasing(h('meta', {itemProp: 'bravo'})), 'meta w/ itemProp')
   assert.ok(!phrasing(h('meta', {charSet: 'utf8'})), 'meta w/o itemProp')
