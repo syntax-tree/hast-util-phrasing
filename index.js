@@ -1,3 +1,12 @@
+/**
+ * @typedef {import('hast').Root} Root
+ * @typedef {import('hast').Content} Content
+ */
+
+/**
+ * @typedef {Root | Content} Node
+ */
+
 import {convertElement} from 'hast-util-is-element'
 import {hasProperty} from 'hast-util-has-property'
 import {embedded} from 'hast-util-embedded'
@@ -56,17 +65,29 @@ const basic = convertElement([
 const meta = convertElement('meta')
 
 /**
- * @param {unknown} node
+ * Check if the given value is *phrasing* content.
+ *
+ * @param {unknown} value
+ *   Thing to check, typically `Node`.
  * @returns {boolean}
+ *   Whether `Node` is phrasing content.
  */
-export function phrasing(node) {
+export function phrasing(value) {
   return Boolean(
-    // @ts-expect-error Looks like a node.
-    (node && node.type === 'text') ||
-      basic(node) ||
-      embedded(node) ||
-      // @ts-expect-error Looks like a node.
-      isBodyOkLink(node) ||
-      (meta(node) && hasProperty(node, 'itemProp'))
+    node(value) &&
+      (value.type === 'text' ||
+        basic(value) ||
+        embedded(value) ||
+        isBodyOkLink(value) ||
+        (meta(value) && hasProperty(value, 'itemProp')))
   )
+}
+
+/**
+ * @param {unknown} value
+ * @returns {value is Node}
+ */
+function node(value) {
+  // @ts-expect-error: looks like an object.
+  return value && typeof value === 'object' && 'type' in value
 }

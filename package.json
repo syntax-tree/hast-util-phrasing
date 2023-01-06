@@ -32,6 +32,7 @@
     "index.js"
   ],
   "dependencies": {
+    "@types/hast": "^2.0.0",
     "hast-util-embedded": "^2.0.0",
     "hast-util-has-property": "^2.0.0",
     "hast-util-is-body-ok-link": "^2.0.0",
