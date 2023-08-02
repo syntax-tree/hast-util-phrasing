@@ -47,14 +47,14 @@ npm install hast-util-phrasing
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {phrasing} from 'https://esm.sh/hast-util-phrasing@2'
+import {phrasing} from 'https://esm.sh/hast-util-phrasing@3'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import {phrasing} from 'https://esm.sh/hast-util-phrasing@2?bundle'
+  import {phrasing} from 'https://esm.sh/hast-util-phrasing@3?bundle'
 </script>
 ```
 
