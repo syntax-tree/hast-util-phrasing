@@ -1,28 +1,53 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
-import {u} from 'unist-builder'
 import {h} from 'hastscript'
+import {u} from 'unist-builder'
 import {phrasing} from './index.js'
-import * as mod from './index.js'
 
-test('phrasing()', () => {
-  assert.deepEqual(
-    Object.keys(mod).sort(),
-    ['phrasing'],
-    'should expose the public api'
-  )
+test('phrasing()', async function (t) {
+  await t.test('should expose the public api', async function () {
+    assert.deepEqual(Object.keys(await import('./index.js')).sort(), [
+      'phrasing'
+    ])
+  })
 
-  assert.ok(!phrasing(h('div', 'Alpha')), 'flow')
-  assert.ok(phrasing(h('meta', {itemProp: 'bravo'})), 'meta w/ itemProp')
-  assert.ok(!phrasing(h('meta', {charSet: 'utf8'})), 'meta w/o itemProp')
-  assert.ok(phrasing(u('text', 'charlie')), 'text')
-  assert.ok(phrasing(u('text', '\n\t')), 'inter-element white-space')
-  assert.ok(phrasing(h('a', {href: '/'}, 'Delta')), 'listed elements (a)')
-  assert.ok(phrasing(h('b', {id: 'echo'}, 'Foxtrott')), 'listed elements (b)')
-  assert.ok(phrasing(h('wbr')), 'listed elements (wbr)')
-  assert.ok(phrasing(h('svg')), 'embedded content')
-  assert.ok(
-    phrasing(h('link', {rel: ['stylesheet'], href: 'index.css'})),
-    'body-ok links'
-  )
+  await t.test('should support flow', async function () {
+    assert(!phrasing(h('div', 'Alpha')))
+  })
+
+  await t.test('should support meta w/ itemProp', async function () {
+    assert(phrasing(h('meta', {itemProp: 'bravo'})))
+  })
+
+  await t.test('should support meta w/o itemProp', async function () {
+    assert(!phrasing(h('meta', {charSet: 'utf8'})))
+  })
+
+  await t.test('should support text', async function () {
+    assert(phrasing(u('text', 'charlie')))
+  })
+
+  await t.test('should support inter-element whitespace', async function () {
+    assert(phrasing(u('text', '\n\t')))
+  })
+
+  await t.test('should support listed elements (a)', async function () {
+    assert(phrasing(h('a', {href: '/'}, 'Delta')))
+  })
+
+  await t.test('should support listed elements (b)', async function () {
+    assert(phrasing(h('b', {id: 'echo'}, 'Foxtrott')))
+  })
+
+  await t.test('should support listed elements (wbr)', async function () {
+    assert(phrasing(h('wbr')))
+  })
+
+  await t.test('should support embedded content', async function () {
+    assert(phrasing(h('svg')))
+  })
+
+  await t.test('should support body-ok links', async function () {
+    assert(phrasing(h('link', {rel: ['stylesheet'], href: 'index.css'})))
+  })
 })
