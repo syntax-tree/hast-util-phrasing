@@ -105,8 +105,8 @@ Check if the given value is [*phrasing*][spec] content.
 
 ###### Parameters
 
-*   `value` (`unknown`)
-    — thing to check, typically [`Node`][node]
+*   `value` ([`Node`][node])
+    — node to check
 
 ###### Returns
 
